@@ -4,10 +4,6 @@
 
 int main()
 {
-   //std::cout << "Example:\n" <<
-   //     "    http-client-async www.example.com 80 /\n" <<
-   //     "    http-client-async www.example.com 80 / 1.0\n\n";
-
     // The io_context is required for all I/O
     asio::io_context ioc;
 
