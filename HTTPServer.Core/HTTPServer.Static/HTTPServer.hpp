@@ -17,6 +17,13 @@ public:
 		, _port(port)
 	{}
 
+	HTTPServer(HTTPServer const& other) = delete;
+	HTTPServer& operator=(HTTPServer const& other) = delete;
+	HTTPServer(HTTPServer&& other) noexcept = delete;
+	HTTPServer& operator=(HTTPServer&& other) noexcept = delete;
+
+	~HTTPServer() { stop(); }
+
 	void start()
 	{
 		std::shared_ptr<const std::string> root = std::make_shared<std::string>(".");
@@ -37,5 +44,20 @@ public:
 			<< std::endl;
 
 		_io_context.run();
+	}
+
+	void stop()
+	{
+		_io_context.stop();
+
+		for (std::thread& thread : _threads)
+		{
+			if (thread.joinable())
+			{
+				thread.join();
+			}
+		}
+
+		_threads.clear();
 	}
 };
