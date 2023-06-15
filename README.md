@@ -8,6 +8,14 @@ There are a few steps to get up and running on own system:
 
 #### 1. Software dependencies
 
+<font size="4">[telnet](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/telnet)>font size/>
+ A network protocol for implementing a text-based terminal interface over the network.
+ 
+ Install telnet:
+ - Linux: [telnet install guide](https://www.layerstack.com/resources/tutorials/Installing-telnet-on-Linux-and-Windows-Cloud-Servers)
+ 
+ - Windows: [telnet install guide](https://www.makeuseof.com/enable-telnet-windows/)
+
 <font size="4">[Conan](https://conan.io/index.html)<font size/>
 
 This is an open source, decentralized and multi-platform package manager for C/C++.
