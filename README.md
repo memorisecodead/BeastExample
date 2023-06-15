@@ -1,5 +1,7 @@
 # BeastExample
 
+Sorts for the prez in the JG hangout
+
 ---
 
 ## Getting Started
@@ -11,6 +13,8 @@ There are a few steps to get up and running on own system:
 <font size="4">[Telnet](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/telnet)<font size/>
  
  A network protocol for implementing a text-based terminal interface over the network.
+ 
+ Is used to check the asio examples.
  
  Install telnet:
  - Linux: [Telnet install guide](https://www.layerstack.com/resources/tutorials/Installing-telnet-on-Linux-and-Windows-Cloud-Servers)
