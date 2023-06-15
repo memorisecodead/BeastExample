@@ -1,5 +1,7 @@
 # BeastExample
 
+Sorts for the prez in the JG hangout
+
 ---
 
 ## Getting Started
