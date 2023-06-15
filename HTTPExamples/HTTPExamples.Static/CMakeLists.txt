@@ -1,5 +1,5 @@
-set(TARGET Examples.Static)
-set(OUTPUT_NAME Examples.Static)
+set(TARGET HTTPExamples.Static)
+set(OUTPUT_NAME HTTPExamples.Static)
 
 set(SOURCE_FILES
 	HTTPExamples.hpp)
