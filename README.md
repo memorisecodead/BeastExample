@@ -53,3 +53,9 @@ Install CMake:
 [Boost::beast documentatioc](https://www.boost.org/doc/libs/1_76_0/libs/beast/doc/html/index.html)
 
 [Simple HTTP Request Guide](https://code.tutsplus.com/tutorials/a-beginners-guide-to-http-and-rest--net-16340)
+ 
+[BoostBeast/NetworkTS](https://www.youtube.com/watch?v=7FQwAjELMek)
+ 
+[BoostBeast/REST API](https://www.youtube.com/watch?v=02q0iO0Dn-Y)
+
+[chat-multi example](https://github.com/boostorg/beast/tree/develop/example/websocket/server/chat-multi) 
