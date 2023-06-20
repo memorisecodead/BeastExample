@@ -2,7 +2,6 @@ set(TARGET HTTPClient)
 set(OUTPUT_NAME HTTPClient)
 
 set(SOURCE_FILES
-	HTTPClient.hpp
 	HTTPClientInfo.hpp
 	Session.hpp
 	main.cpp)

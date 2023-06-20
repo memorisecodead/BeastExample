@@ -2,6 +2,13 @@
 
 #include "Beast/beast.hpp"
 
+/*
+* @brief class RESTExample created /
+*		 for understand how REST is works reasons.
+* @details There are many other requests not covered here.
+*		   All other queries are formed in a similar way, /
+*		   so you can operate to create others based on the proposed implementation.
+*/
 class RESTExample
 {
 	const std::string host;
@@ -24,20 +31,32 @@ public:
 	RESTExample(RESTExample&& other) noexcept = delete;
 	RESTExample& operator=(RESTExample&& other) noexcept = delete;
 
+	/*
+	* @brief A method for sending a request to the server. 
+	*/
 	void SendRequest(http::verb verb,const std::string& target)
 	{
+		// Resolve the address and connect
 		asio::connect(socket, resolver.resolve(host, port));
 
+		// Designing a Request
 		auto Request = SetRESTRequest<http::string_body>(verb, target);
 
+		// Sending Requests via a Connected Socket
 		http::write(socket, Request);
 
+		// Part responsible for reading the response
 		readResponce();
 
+		// Close the connection
 		closeConnection();
 	}
 
 private:
+	/*
+	* @brief A method for determining the type of Requests. 
+	*		The same method takes a target to address the server with a certain value.
+	*/
 	template<typename Body>
 	const http::request<Body> SetRESTRequest(http::verb verb, const std::string& target,
 		unsigned int version = 11)
@@ -86,7 +105,7 @@ private:
 		case http::verb::delete_:
 		{
 			// Set up an HTTP DELETE request message
-			http::request<Body> req{http::verb::delete_, target, 11};
+			http::request<Body> req{verb, target, 11};
 			req.set(http::field::host, host);
 			req.set(http::field::user_agent, BOOST_BEAST_VERSION_STRING);
 
@@ -102,6 +121,9 @@ private:
 		return http::request<Body>();
 	}
 
+	/*
+	* @brief Part responsible for reading the response
+	*/
 	void readResponce()
 	{
 		// This buffer is used for reading and must be persisted
@@ -117,6 +139,9 @@ private:
 		std::cout << res << std::endl;
 	}
 
+	/*
+	* @brief Close the connection
+	*/
 	void closeConnection()
 	{
 		beast::error_code ec;
