@@ -21,6 +21,8 @@ void beast_test(benchmark::State& state)
 
     boost::asio::connect(socket, endpoint_iterator);
 
+    auto start = std::chrono::high_resolution_clock::now();
+
     while (state.KeepRunningBatch(state.range_x()))
     {
         for (int i = 0; i < state.range_x(); ++i)
@@ -41,4 +43,10 @@ void beast_test(benchmark::State& state)
             state.SetIterationTime(elapsed_seconds.count());
         }
     }
+
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+    double beast_time = duration.count() / (double)state.range_x();
+    double beast_req_per_sec = 1000000.0 / beast_time;
+    std::cout << "Beast: " << beast_req_per_sec << " req/s, " << beast_time << " us/req" << std::endl;
 }
