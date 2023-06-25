@@ -8,6 +8,9 @@ endif()
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 
 conan_cmake_configure(REQUIRES boost/1.81.0
+							   benchmark/1.8.0
+							   poco/1.12.4
+							   libcurl/8.1.2
                     GENERATORS cmake_find_package_multi)
 
 conan_cmake_autodetect(settings)
@@ -23,3 +26,6 @@ list(APPEND CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR}/Conan)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
 
 find_package(Boost REQUIRED)
+find_package(benchmark REQUIRED)
+find_package(Poco REQUIRED Foundation Net Util)
+find_package(CURL REQUIRED)

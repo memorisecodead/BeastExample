@@ -8,5 +8,6 @@ add_subdirectory(HTTPRequests)
 add_subdirectory(REST)
 add_subdirectory(HTTPServer)
 add_subdirectory(HTTPClient)
+add_subdirectory(Benchmark)
 
 add_library(${TARGET} INTERFACE)
