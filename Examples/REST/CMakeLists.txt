@@ -2,7 +2,6 @@ set(TARGET RESTExample)
 set(OUTPUT_NAME RESTExample)
 
 set(SOURCE_FILES
-	RESTExample.hpp
 	SimpleRESTAPI.hpp
 	main.cpp)
 

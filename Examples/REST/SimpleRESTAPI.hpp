@@ -2,6 +2,12 @@
 
 #include "Beast/beast.hpp"
 
+/*
+* @brief class SimpleRESTAPI
+* @details This example creates a simple web server that listens 
+*          on the port specified as the command line argument and responds 
+*		   to HTTP requests with a status of 200 OK and the response body "Hello, RESTAPI Example!".
+*/
 class SimpleRESTAPI
 {
 	std::string address;
@@ -25,6 +31,12 @@ public:
 	SimpleRESTAPI(SimpleRESTAPI&& other) noexcept = delete;
 	SimpleRESTAPI& operator=(SimpleRESTAPI&& other) noexcept = delete;
 
+	/*
+	* @details Uses boost::beast::flat_buffer to read request from socket 
+	*		   and http::request object to parse request.
+	*		   If the request is successfully parsed, 
+	*		   a response is created using the http::response object.
+	*/
 	const http::request<http::string_body> CreateSimpleRequest()
 	{
         boost::beast::flat_buffer buffer;
@@ -45,7 +57,15 @@ public:
 		return request;
 	}
 
-	const http::response<http::string_body> SendResponse(http::request<http::string_body>& request)
+	/*
+	* @details In this example we set the response status to http::status::ok, 
+	*		   the Server header to the current version of Boost.Beast and the content type to text/html.
+	*		   We also set the keep-alive flag for the response to maintain a persistent connection.
+	*		   We then set the body of the response to "Hello, RESTAPI Example!" and prepare it for sending 
+	*		   using the prepare_payload() method.
+	*		   We send the response to the client using the http::write() method
+	*/
+	const http::response<http::string_body> SendSimpleResponse(http::request<http::string_body>& request)
 	{
 		http::response<http::string_body> response{http::status::ok, request.version()};
 		response.set(http::field::server, BOOST_BEAST_VERSION_STRING);
