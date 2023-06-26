@@ -17,12 +17,12 @@ class RESTExample
 	tcp::socket socket;
 	tcp::resolver resolver;
 public:
-	RESTExample(asio::io_context& context, const std::string str_host, const std::string str_port) 
+	RESTExample(asio::io_context& context, 
+		const std::string str_host, const std::string str_port) 
 		: host(str_host)
 		, port(str_port)
 		, socket(context)
-		, resolver(context)
-	{}
+		, resolver(context) {}
 
 	~RESTExample() = default;
 
@@ -34,7 +34,7 @@ public:
 	/*
 	* @brief A method for sending a request to the server. 
 	*/
-	void SendRequest(http::verb verb,const std::string& target)
+	void SendHTTPRequest(http::verb verb,const std::string& target)
 	{
 		// Resolve the address and connect
 		asio::connect(socket, resolver.resolve(host, port));
