@@ -26,6 +26,8 @@ public:
 		acceptor.accept(socket);
 	}
 
+	~SimpleRESTAPI() = default;
+
 	SimpleRESTAPI(SimpleRESTAPI const& other) = delete;
 	SimpleRESTAPI& operator=(SimpleRESTAPI const& other) = delete;
 	SimpleRESTAPI(SimpleRESTAPI&& other) noexcept = delete;
