@@ -1,5 +1,5 @@
-set(TARGET RESTExample)
-set(OUTPUT_NAME RESTExample)
+set(TARGET RESTAPIExample)
+set(OUTPUT_NAME RESTAPIExample)
 
 set(SOURCE_FILES
 	SimpleRESTAPI.hpp
