@@ -59,3 +59,11 @@ Install CMake:
 [BoostBeast/REST API](https://www.youtube.com/watch?v=02q0iO0Dn-Y)
 
 [chat-multi example](https://github.com/boostorg/beast/tree/develop/example/websocket/server/chat-multi) 
+
+[Google-Benchmark](https://github.com/google/benchmark)
+
+[Google-Benchmark-Guide](https://github.com/fenbf/benchmarkLibsTest/tree/master/googleBenchmarkTest/benchmark-master32)
+
+[poco-lib](https://conan.io/center/poco?tab=recipe)
+
+[libcurl](https://conan.io/center/libcurl)
