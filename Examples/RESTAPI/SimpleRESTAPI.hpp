@@ -78,14 +78,15 @@ public:
 
 		boost::system::error_code ec;
 		http::write(socket, response, ec);
-		if (ec) 
+
+		if (ec)
 		{
 			std::cerr << "Error: " << ec.message() << "\n";
 			return http::response<http::string_body>();
 		}
-		if (!request.keep_alive()) 
+		if (!request.keep_alive())
 		{
-			return http::response<http::string_body>();
+			return response;
 		}
 
 		return response;
