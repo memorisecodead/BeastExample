@@ -1,8 +1,8 @@
-set(TARGET RESTAPIExample)
-set(OUTPUT_NAME RESTAPIExample)
+set(TARGET RESTFULAPIExample)
+set(OUTPUT_NAME RESTFULAPIExample)
 
 set(SOURCE_FILES
-	RESTAPIExample.hpp
+	RESTFulAPIExample.hpp
 	main.cpp)
 
 add_executable(${TARGET} ${SOURCE_FILES})

@@ -1,4 +1,4 @@
-#include "SimpleRESTAPI.hpp"
+#include "RESTAPIExample.hpp"
 
 int main()
 {
@@ -6,10 +6,10 @@ int main()
 	std::string address{"127.0.0.1"};
 	uint16_t port = 80;
 
-	SimpleRESTAPI example(context, address, port);
+	RESTAPIExample example(context, address, port);
 
-	auto request = example.CreateSimpleRequest();
-	example.SendSimpleResponse(request);
+	auto request = example.CreateRequest();
+	example.SendResponse(request);
 
 	return EXIT_SUCCESS;
 }
